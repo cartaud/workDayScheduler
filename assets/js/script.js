@@ -5,6 +5,7 @@ currentDayEl.text(moment().format('dddd, MMMM Do')); //format example --> Wednes
 let currentHourMinute = moment().format(); //format example --> 2022-04-14T13:07:00-07:00
 let currentHour = currentHourMinute[11]+currentHourMinute[12]; //returns just the hour 01-24
 containerEl.on('click', 'button', saveText)
+//Can you set an elements value to a local storage? ex --><textarea value="localStorage.getItem()"
 function createCalender() {
     for (let i=9; i<24;i++) {
         let timeBlockEl = $('<div>');
@@ -14,9 +15,11 @@ function createCalender() {
         let rowEl = $('<div>');
         rowEl.addClass('row');
         let inputTextEl = $('<textarea>');
+        inputTextEl.text(localStorage.getItem(`toDo${i}`) || '');
         let lockButtonEl = $('<button>');
         lockButtonEl.append('<i class="fa-solid fa-floppy-disk"></i>');
         lockButtonEl.addClass('saveBtn');
+        lockButtonEl.attr('id', `${i}`)
         containerEl.append(timeBlockEl);
         timeBlockEl.append(hourContainerEl);
         timeBlockEl.append(rowEl)
@@ -50,9 +53,13 @@ function setColor(i, inputEl) {
          inputEl.addClass('future')
      }
 }
-
+//I need to somehow get the position of the textbox in respect to the container element
 function saveText(e) {
-    console.log($(this).siblings().val())
+    for (let i=9; i<24;i++){
+        if ($(this).attr('id') == i) {
+            localStorage.setItem(`toDo${i}`, $(this).siblings().val());
+        }
+    }
 }
 
 createCalender()
