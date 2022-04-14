@@ -42,7 +42,6 @@ textarea {
     width:90%;
     border: none;
     border-left: solid black 1px;
-    background-color: #77dd77;
 }
 
 .hour {
@@ -50,6 +49,7 @@ textarea {
     color: #000000;
     border-top: 1px dashed #000000;
     width: 10%;
+    padding: 10px 0 0 0;
 }
 
 .past {
@@ -95,3 +95,5 @@ textarea {
 .hourBlock input {
     width: 80%;
 }
+
+
