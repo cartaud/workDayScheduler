@@ -38,10 +38,12 @@ textarea {
     width: 100%;
 }
 
-.row input {
+.row textarea {
     width:90%;
     border: none;
     border-left: solid black 1px;
+    color: black;
+    
 }
 
 .hour {
@@ -49,7 +51,9 @@ textarea {
     color: #000000;
     border-top: 1px dashed #000000;
     width: 10%;
-    padding: 10px 0 0 0;
+    padding: 10px 10px 0 0;
+    margin-right: 15px;
+    text-align: right;
 }
 
 .past {
@@ -80,6 +84,7 @@ textarea {
 .saveBtn i:hover {
     font-size: 20px;
     transition: all 0.3s ease-in-out;
+    color: #000000;
 }
 
 .hourBlock {

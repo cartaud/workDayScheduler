@@ -2,15 +2,9 @@ let containerEl = $('.container');
 let currentDayEl = $('#currentDay');
 currentDayEl.text(moment().format('dddd, MMMM Do')); //format example --> Wednesday, April 13th 
 
-let currentHourMinute = moment().format('LT');
-let currentHour = currentHourMinute[0]+currentHourMinute[1];
-
-let amOrPm = currentHourMinute[6]+currentHourMinute[7]
-if (amOrPm == 'PM' && currentHour!=12) {
-    currentHour = currentHour +12;
-}
-
-
+let currentHourMinute = moment().format(); //format example --> 2022-04-14T13:07:00-07:00
+let currentHour = currentHourMinute[11]+currentHourMinute[12]; //returns just the hour 01-24
+containerEl.on('click', 'button', saveText)
 function createCalender() {
     for (let i=9; i<24;i++) {
         let timeBlockEl = $('<div>');
@@ -19,8 +13,9 @@ function createCalender() {
         hourContainerEl.addClass('hour');
         let rowEl = $('<div>');
         rowEl.addClass('row');
-        let inputTextEl = $('<input>');
+        let inputTextEl = $('<textarea>');
         let lockButtonEl = $('<button>');
+        lockButtonEl.append('<i class="fa-solid fa-floppy-disk"></i>');
         lockButtonEl.addClass('saveBtn');
         containerEl.append(timeBlockEl);
         timeBlockEl.append(hourContainerEl);
@@ -56,5 +51,8 @@ function setColor(i, inputEl) {
      }
 }
 
+function saveText(e) {
+    console.log($(this).siblings().val())
+}
 
 createCalender()
