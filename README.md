@@ -7,8 +7,8 @@ view the page <a href="https://cartaud.github.io/workDayScheduler/" target="_bla
 
 preview 
 
-<img width="600px" src="" alt="page preview">
+<img width="600px" src="https://github.com/cartaud/workDayScheduler/blob/main/assets/images/previewOne.png?raw=true" alt="page preview">
 
-<img width="600px" src="" alt="page preview">
+<img width="600px" src="https://github.com/cartaud/workDayScheduler/blob/main/assets/images/previewTwo.png?raw=true" alt="page preview">
 
 
