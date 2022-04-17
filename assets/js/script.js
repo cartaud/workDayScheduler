@@ -9,7 +9,7 @@ containerEl.on('click', 'button', saveText) //targets all buttons that are withi
 
 //This function creates all the time blocks for the calender and appends them to page
 function createCalender() {
-    for (let i=9; i<24;i++) {
+    for (let i=9; i<18;i++) {
         let timeBlockEl = $('<div>');
         timeBlockEl.addClass('time-block');
         let hourContainerEl = $('<div>');
@@ -59,7 +59,7 @@ function setColor(i, inputEl) {
 
 //saves the text of each individual textarea to local storage on button click
 function saveText() {
-    for (let i=9; i<24;i++){
+    for (let i=9; i<18;i++){
         if ($(this).attr('id') == i) { //matches the id of the button that was clicked to the specified local storage
             localStorage.setItem(`toDo${i}`, $(this).siblings().val()); 
         }

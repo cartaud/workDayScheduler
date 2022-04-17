@@ -8,9 +8,10 @@ textarea {
     background: transparent;
     border: none;
     resize: none;
-    color: #000000;
     border-left: 1px solid black;
+    border-right: 1px solid black;
     padding: 10px;
+    width:90%;
 }
 
 .jumbotron {
@@ -39,11 +40,12 @@ textarea {
 }
 
 .row textarea {
-    width:90%;
-    border: none;
-    border-left: solid black 1px;
     color: black;
-    
+}
+
+.row textarea:focus {
+    outline: none;
+    border: 2px solid black;
 }
 
 .hour {
@@ -73,7 +75,7 @@ textarea {
 
 .saveBtn {
     border: none;
-    border-left: 1px solid black;
+    
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     background-color: #06aed5;
